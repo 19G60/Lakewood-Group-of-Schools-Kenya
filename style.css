@@ -51,38 +51,6 @@
     background: #fff;
 }
 
-/* Responsive adjustments */
-@media (max-width: 769px) {
-    .btn {
-        flex-direction: row;
-        gap: 1rem;
-        padding: 15px 0;
-    }
-    
-    .btn a {
-        padding: 12px 25px;
-        font-size: 0.8rem;
-        min-width: 130px;
-    }
-}
-
-@media (max-width: 475px) {
-    .btn {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 10px;
-    }
-    
-    .btn a {
-        width: 200px;
-        text-align: center;
-    }
-}
-
-
-
-
-
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -109,22 +77,30 @@ h6{
 
 
 /*Navigation*/
-nav{
-  
+nav {
+    position: fixed;
+    width: 100%;
     background-color: #fff;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 1vw 8vw;
+    padding: 1rem 2rem;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
-    z-index: index;
-
+    z-index: 1000;
 }
 
 nav img{
-    width: 100px;
+    width: 150px;
     height: auto;
+}
+ .navigation{
+    display: flex;
+    align-items: center;
+ }
+
+.navigation ul {
+    display: flex;
+    gap: 30px;
 }
 
 
@@ -1352,7 +1328,7 @@ text-align: center;
 /* Animation Classes */
 .animate {
     opacity: 0;
-    transition: all 3.5s ease-out;
+    transition: all 0.8s ease-out;
 }
 
 .fade-in {
@@ -1416,6 +1392,39 @@ text-align: center;
 
 
 
+
+
+/* Responsive adjustments */
+@media (max-width: 769px) {
+    .btn {
+        flex-direction: row;
+        gap: 1rem;
+        padding: 15px 0;
+    }
+    
+    .btn a {
+        padding: 12px 25px;
+        font-size: 0.8rem;
+        min-width: 130px;
+    }
+}
+
+@media (max-width: 475px) {
+    .btn {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 10px;
+    }
+    
+    .btn a {
+        width: 200px;
+        text-align: center;
+    }
+}
+
+
+
+
 @media(max-width:769px){
     nav{
         padding: 15px 20px;
@@ -1426,46 +1435,67 @@ text-align: center;
     }
     #menu-btn{
     
-    display: initial;
+   display: block;
+        font-size: 24px;
+        cursor: pointer;
 }
 
 #menu-close{
-    display: initial;
-    font-size: 1.6rem;
-    color: #600dd4;
-    padding: 30px 0 20px 20px;
+     position: absolute;
+        top: 15px;
+        right: 15px;
+        color: #fff;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1001;
+        padding: 5px;
 }
 nav .navigation ul{
-    position: fixed;
-    top: 0;
-    right: -220px;
-    width: 220px;
-    height: 100vh;
-    background: rgba(17, 20, 104, 0.9);
-    backdrop-filter: blur(4.5px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    transition: 1s ease;
-    z-index: 999;
+        position: fixed;
+        top: 0;
+        right: -220px;
+        width: 220px;
+        height: 100vh;
+        background: rgba(17, 20, 104, 0.95);
+        backdrop-filter: blur(4.5px);
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        margin: 0;
+        transition: 0.3s ease;
+        z-index: 1000;
+        overflow-y: auto;
+    }
+    
 
-}
+
 
 nav .navigation ul .active{
     right: 0;
 }
 
-
+  nav .navigation ul li:first-child {
+        margin-top: 50px; /* Add space for close button */
+    }
 
 nav .navigation ul li{
-    padding: 20px 0 20px 40px;
-    margin-left: 0;
-}
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;}
+
+
+
 nav .navigation ul li a{
 color: #fff;
+display: block;
+        width: 100%;
 }
+
+
 #home{
     padding-top: 0px;
 }
