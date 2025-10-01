@@ -1349,7 +1349,37 @@ text-align: center;
 }
 
 
+/* Animation Classes */
+.animate {
+    opacity: 0;
+    transition: all 3.5s ease-out;
+}
 
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.slide-left {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.slide-right {
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.scale-up {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+/* Active states when element is visible */
+.animate.active {
+    opacity: 1;
+    transform: translate(0) scale(1);
+}
 
 
 
